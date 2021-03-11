@@ -1,1 +1,4 @@
-print("hehe")
+print("hoho")
+
+def funkcja():
+    pass
