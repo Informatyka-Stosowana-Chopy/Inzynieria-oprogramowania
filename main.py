@@ -1,4 +1,1 @@
-print("hoho")
-
-def funkcja():
-    pass
+print("hehe")
