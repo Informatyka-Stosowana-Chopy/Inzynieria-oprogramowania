@@ -1,3 +1,0 @@
-# Inzynieria-oprogramowania
-
-No elo
