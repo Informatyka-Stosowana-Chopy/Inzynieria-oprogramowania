@@ -2,22 +2,52 @@ import React, { Component } from "react"
 import { render } from "react-dom"
 import Button from "@material-ui/core/Button"
 import { AppBar, Toolbar } from "@material-ui/core"
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+import InputBase from '@material-ui/core/InputBase';
+import MenuIcon from '@material-ui/icons/Menu';
+import SearchIcon from '@material-ui/icons/Search';
+import Grid from '@material-ui/core/Grid'
+import Radio from '@material-ui/core/Radio'
+import { BrowserRouter as Router, Switch, Route, BrowserRouter } from 'react-router-dom';
+import Paper from '@material-ui/core/Paper';
+import ScreenPlanet from './ScreenPlanets'
+import ScreenMain from './ScreenMain'
 
+import img from '../../public/images/img.jpg'
+import NavBar from './NavBar'
 
 export default function App() {
 
     return (
-        <div id='main'>
-            
-            
-            <h1>enter the space</h1>
-            <Button variant="contained" color="default">
-                Hello Cosmos
-            </Button>
+
+        <div className='main'>
+          { <BrowserRouter>
+            <NavBar />
+            <Switch>
+
+              <Route path="/" exact>
+                HOME
+                <ScreenMain />
+              </Route>
+
+              <Route path="/planets" exact>
+                PLANETS
+                <ScreenPlanet />
+              </Route>
+
+              <Route path="/spaceships" exact>SPACESHIPS</Route>
+              <Route path="/order" exact>FLIGHTS</Route>
+              <Route path="/profile" exact>YOUR PROFILE</Route>
+              <Route path="/about" exact>ABOUT</Route>
+            </Switch>
+          </BrowserRouter> }
+          
+
+          
         </div>
     )
 }
 
 const appDiv = document.getElementById("app")
 render (<App />, appDiv)
-

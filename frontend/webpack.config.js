@@ -18,8 +18,15 @@ module.exports = {
         use: {
           loader: "babel-loader",
         },
+      }, 
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i, 
+        loader: 'file-loader',
+        options: {
+          name: '/public/icons/[name].[ext]'
+        }
       },
-    ],
+    ], 
   },
   optimization: {
     minimize: true,
@@ -31,5 +38,5 @@ module.exports = {
         NODE_ENV: JSON.stringify("development"),
       },
     }),
-  ],
+  ], 
 };
