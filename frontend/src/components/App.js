@@ -13,9 +13,12 @@ import { BrowserRouter as Router, Switch, Route, BrowserRouter } from 'react-rou
 import Paper from '@material-ui/core/Paper';
 import ScreenPlanet from './ScreenPlanets'
 import ScreenMain from './ScreenMain'
+import ScreenLogin from './ScreenLogin'
+import { makeStyles, withTheme } from '@material-ui/core/styles';
 
 import img from '../../public/images/img.jpg'
 import NavBar from './NavBar'
+
 
 export default function App() {
 
@@ -27,19 +30,23 @@ export default function App() {
             <Switch>
 
               <Route path="/" exact>
-                HOME
+                HOME DEBUG
                 <ScreenMain />
               </Route>
 
               <Route path="/planets" exact>
-                PLANETS
+                PLANETS DEBUG
                 <ScreenPlanet />
               </Route>
 
-              <Route path="/spaceships" exact>SPACESHIPS</Route>
-              <Route path="/order" exact>FLIGHTS</Route>
-              <Route path="/profile" exact>YOUR PROFILE</Route>
-              <Route path="/about" exact>ABOUT</Route>
+              <Route path="/spaceships" exact>SPACESHIPS DEBUG</Route>
+              <Route path="/order" exact>FLIGHTS DEBUG</Route>
+              <Route path="/profile" exact>YOUR PROFILE DEBUG</Route>
+              <Route path="/about" exact>ABOUT DEBUG</Route>
+              <Route path="/login" exact>
+                ZALOGUJ SIĘ DEBUG
+                <ScreenLogin />
+                </Route>
             </Switch>
           </BrowserRouter> }
           

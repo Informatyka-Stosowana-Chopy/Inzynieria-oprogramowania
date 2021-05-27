@@ -8,4 +8,5 @@ urlpatterns = [
     path('order', index),
     path('profile', index),
     path('about', index),
+    path('login', index),
 ]

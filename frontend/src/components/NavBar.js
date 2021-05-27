@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
     title: {
       flexGrow: 1,
     },
+    
     bar: {
       backgroundColor: grey[900], // bar color
     },
@@ -37,7 +38,7 @@ export default function NavBar() {
     const classes = useStyles()
 
     // is logged in
-    const [auth, setAuth] = React.useState(true)
+    const [auth, setAuth] = React.useState(false)
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
 
@@ -76,11 +77,15 @@ export default function NavBar() {
               <Link to={"./spaceships"}>SPACESHIPS</Link>
             </Typography>
             <Typography variant="h6" className={classes.title}>
-            <Link to={"./order"}>FLIGHTS</Link>
+              <Link to={"./order"}>FLIGHTS</Link>
             </Typography>
             <Typography variant="h6" className={classes.title}>
-            <Link to={"./about"}>ABOUT</Link>
+              <Link to={"./about"}>ABOUT</Link>
             </Typography>
+            <Typography variant="h6" className={classes.title}>
+              <Link to={"./login"}>LOG IN</Link>
+            </Typography>
+
             {auth && (
               <div>
                 <IconButton
