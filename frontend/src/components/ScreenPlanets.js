@@ -1,10 +1,21 @@
 
 import React from 'react'
+import Model from './Model'
+import { makeStyles } from '@material-ui/core/styles'
+
+
+const useStyles = makeStyles({
+    
+})
 
 const ScreenPlanets = () => {
+
+    const classes = useStyles()
+
     return (
-        <div>
-            
+        <div className="model-div">
+            TROLO
+            <Model />
         </div>
     )
 }
