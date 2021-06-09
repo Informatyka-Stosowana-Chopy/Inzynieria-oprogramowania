@@ -18,7 +18,7 @@
   </head>
   <body>
     <div id="main">
-        <div>{{ name }} == {{ text }}</div>
+        <div>{{ name }} == {{ text }} == {{ user.first_name }} == {{ user.last_name }}</div>
         <form method="post" action="/">
             {% csrf_token %}
             <input type="text" name="input" value="input" />
