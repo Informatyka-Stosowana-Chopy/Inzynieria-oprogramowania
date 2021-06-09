@@ -14,6 +14,8 @@ import Paper from '@material-ui/core/Paper';
 import ScreenPlanet from './ScreenPlanets'
 import ScreenMain from './ScreenMain'
 import ScreenLogin from './ScreenLogin'
+import LoadingScreen from './LoadingScreen'
+import Api from './Api'
 import { makeStyles, withTheme } from '@material-ui/core/styles';
 
 import img from '../../public/images/img.jpg'
@@ -25,6 +27,10 @@ export default function App() {
     return (
 
         <div className='main'>
+
+          <LoadingScreen />
+          <Api />
+
           { <BrowserRouter>
             <NavBar />
             <Switch>

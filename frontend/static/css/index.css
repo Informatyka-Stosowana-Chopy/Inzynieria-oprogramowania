@@ -23,3 +23,8 @@ body {
     color: "white";
     border: 3 white;
 } */
+
+.alert-hidden {
+    opacity: 0;
+    transition: all 250ms linear 2s; // <- the last value defines transition-delay
+  }
