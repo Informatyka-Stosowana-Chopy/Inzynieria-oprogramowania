@@ -18,9 +18,15 @@
   </head>
   <body>
     <div id="main">
+        <div>{{ name }} == {{ text }}</div>
+        <form method="post" action="/">
+            {% csrf_token %}
+            <input type="text" name="input" value="input" />
+            <button type="submit" name="save">Submit</button>
+        </form>
       <div id="app">
 
-        
+
 
       </div>
     </div>
