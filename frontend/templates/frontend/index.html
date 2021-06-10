@@ -18,7 +18,7 @@
   </head>
   <body>
     <div id="main">
-        <div>{{ name }} == {{ text }} == {{ user.first_name }} == {{ user.last_name }}</div>
+        <div>{{ name }} == {{ text }} == {{ user.first_name }} == {{ user.last_name }} == BD: {{ user.profile.birth_date | date:"d M Y"}} == Origin Panet: {{ user.profile.home_planet }}</div>
         <form method="post" action="/">
             {% csrf_token %}
             <input type="text" name="input" value="input" />

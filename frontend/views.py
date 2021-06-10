@@ -13,13 +13,13 @@ def index(request, *args, **kwargs):
         if user is not None:
             login(request, user)
         if request.user.is_authenticated:
-            name = 'imie' + request.user.username
+            name = 'user: ' + request.user.username
             print(name)
             return render(request, 'frontend/index.html', {'name': name, 'text': text, 'user': user})
     else:
         text = 'placeholder'
     if request.user.is_authenticated:
-        name = 'imie' + request.user.username
+        name = 'user: ' + request.user.username
         print(name)
         return render(request, 'frontend/index.html', {'name': name, 'text': text})
     else:
