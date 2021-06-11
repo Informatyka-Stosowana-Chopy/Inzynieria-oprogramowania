@@ -14,7 +14,6 @@ const ScreenPlanets = () => {
 
     return (
         <div className="model-div">
-            TROLO
             <Model />
         </div>
     )

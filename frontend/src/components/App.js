@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React from "react"
 import { render } from "react-dom"
 import Button from "@material-ui/core/Button"
 import { AppBar, Toolbar } from "@material-ui/core"
@@ -20,11 +20,13 @@ import { makeStyles, withTheme } from '@material-ui/core/styles';
 
 import img from '../../public/images/img.jpg'
 import NavBar from './NavBar'
+import SignInScreen from "./SignInScreen";
 
 
 export default function App() {
 
     return (
+      
 
         <div className='main'>
 
@@ -46,13 +48,23 @@ export default function App() {
               </Route>
 
               <Route path="/spaceships" exact>SPACESHIPS DEBUG</Route>
+
               <Route path="/order" exact>FLIGHTS DEBUG</Route>
+
               <Route path="/profile" exact>YOUR PROFILE DEBUG</Route>
+              
               <Route path="/about" exact>ABOUT DEBUG</Route>
+              
               <Route path="/login" exact>
                 ZALOGUJ SIĘ DEBUG
                 <ScreenLogin />
-                </Route>
+              </Route>
+
+              <Route path="/signin" exact>
+                <SignInScreen />
+                SIGN IN
+              </Route>
+
             </Switch>
           </BrowserRouter> }
           

@@ -16,11 +16,19 @@ class Profile(models.Model):
     NORMAL = 'NORMALNY'
     PRZEWOZNIK = 'PRZEWOŹNIK'
     ADMIN = 'ADMINISTRATOR'
+    FE = 'KOBIETA'
+    ME = 'MĘŻCZYZNA'
+    OT = 'OTHER'
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     USER_TYPE = [(NORMAL, 'NORMALNY'),
                  (PRZEWOZNIK, 'PRZEWOŹNIK'),
                  (ADMIN, 'ADMINISTRATOR')]
+    SEX = [(FE, 'KOBIETA'),
+           (ME, 'MĘŻCZYZNA'),
+           (OT, 'OTHER')]
     user_type = models.CharField(max_length=13, choices=USER_TYPE, default=NORMAL)
+    sex = models.CharField(max_length=9, choices=SEX, default=ME)
     birth_date = models.DateField(default='2000-01-01')
     user_pesel = models.CharField(max_length=11, blank=True)
     home_planet = models.CharField(max_length=200, blank=True)

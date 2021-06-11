@@ -9,4 +9,5 @@ urlpatterns = [
     path('profile', index),
     path('about', index),
     path('login', index),
+    path('signin', index),
 ]

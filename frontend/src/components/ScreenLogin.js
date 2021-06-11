@@ -71,6 +71,12 @@ const ScreenLogin = () => {
                             </Grid>
                             <Grid item xs={12}>
                                 <input name="submit-login" className={classes.input} type="submit" />
+                                <Button name="submit-login"
+                                    color="default"
+                                    variant="contained"
+                                    type="submit">
+                                        LOG ME IN
+                                    </Button>
                             </Grid>
                         </form>
                         
@@ -80,22 +86,6 @@ const ScreenLogin = () => {
                     </CardActions>
                 </Grid>
             </Card>
-
-
-            
-            
-
-
-            <Link to='/' exact> {/* exact causes warning */}
-                <Button
-                    id="btn"
-                    variant="contained"
-                    color="default">
-                    LOG IN
-                </Button>   
-            </Link>
-
-            
         </div>
     )
 }

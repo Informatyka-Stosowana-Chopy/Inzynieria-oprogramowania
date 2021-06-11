@@ -85,6 +85,9 @@ export default function NavBar() {
             <Typography variant="h6" className={classes.title}>
               <Link to={"./login"}>LOG IN</Link>
             </Typography>
+            <Typography variant="h6" className={classes.title}>
+              <Link to={"./signin"}>SIGN IN</Link>
+            </Typography>
 
             {auth && (
               <div>
@@ -114,6 +117,7 @@ export default function NavBar() {
                 >
                   <MenuItem onClick={handleClose}>Profile</MenuItem>
                   <MenuItem onClick={handleClose}>My account</MenuItem>
+                  <MenuItem onClick={handleClose}>Log out</MenuItem>
                 </Menu>
               </div>
             )}
