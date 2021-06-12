@@ -22,8 +22,9 @@ import {
   KeyboardTimePicker,
   KeyboardDatePicker,
 } from '@material-ui/pickers';
-import { FormHelperText } from '@material-ui/core'
+import { FormHelperText, Typography } from '@material-ui/core'
 import InputAdornment from '@material-ui/core/InputAdornment';
+import { useForm } from 'react-hook-form'
 
 
 const darkTheme = createMuiTheme({
@@ -38,6 +39,10 @@ const useStyles = makeStyles((theme) => ({
         //backgroundColor: lightBlue[900],
         paddingTop: 50,
     },
+    text: {
+      marginBottom: 70,
+      marginTop: 70,
+    },
 }));
 
 const defaultValues = {
@@ -51,6 +56,7 @@ const defaultValues = {
     pesel: "",
     homeplanet: "earth",
 };
+
 
 const SignInScreen = () => {
 
@@ -83,11 +89,22 @@ const SignInScreen = () => {
 
     const classes = useStyles()
 
+    const { register, handlesubmit } = useForm()
+
     return (
 
         <div className={ classes.signin }>
 
         <ThemeProvider theme={darkTheme}>
+
+        <Typography
+          className={ classes.text }
+          align="center"
+          gutterBottom="true"
+          variant="h3"
+          >
+          Create an account
+        </Typography>
 
         <form onSubmit={handleSubmit}>
         <Grid container 
@@ -97,6 +114,7 @@ const SignInScreen = () => {
             direction="column">
           <Grid item>
             <TextField
+              size="small"
               id="name-input"
               name="username"
               label="Pseudonim"
@@ -116,6 +134,7 @@ const SignInScreen = () => {
           <Grid item>
            
             <TextField
+              size="small"
               id="username-input"
               name="firstname"
               label="First name"
@@ -127,6 +146,7 @@ const SignInScreen = () => {
           </Grid>
           <Grid item>
             <TextField
+              size="small"
               id="lastname-input"
               name="lastname"
               label="Last name"
@@ -138,6 +158,7 @@ const SignInScreen = () => {
           </Grid>
           <Grid item>
             <TextField
+              size="small"
               id="password-input"
               name="password"
               label="Password"
@@ -167,7 +188,6 @@ const SignInScreen = () => {
           </MuiPickersUtilsProvider>
           <Grid item>
             <FormControl>
-              
               <FormLabel>Gender</FormLabel>
               <RadioGroup
                 name="sex"

@@ -86,7 +86,7 @@ export default function NavBar() {
               <Link to={"./login"}>LOG IN</Link>
             </Typography>
             <Typography variant="h6" className={classes.title}>
-              <Link to={"./signin"}>SIGN IN</Link>
+              <Link to={"./signin"}>SIGN UP</Link>
             </Typography>
 
             {auth && (
