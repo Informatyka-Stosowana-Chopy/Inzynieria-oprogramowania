@@ -64,7 +64,8 @@ const defaultValues = {
     firstname: "",
     lastname: "",
     username: "",
-    password: "",
+    password1: "",
+    password2: "",
     sex: "",
     mail: "",
     birthdate: "",
@@ -178,11 +179,23 @@ const SignInScreen = () => {
             <TextField
               size="small"
               id="password-input"
-              name="password"
+              name="password1"
               label="Password"
               variant="outlined"
               type="password"
               value={formValues.password}
+              onChange={handleInputChange}
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              size="small"
+              id="repeatPassword-input"
+              name="password2"
+              label="Confirm"
+              variant="outlined"
+              type="password"
+              value={formValues.repeatPassword}
               onChange={handleInputChange}
             />
           </Grid>
