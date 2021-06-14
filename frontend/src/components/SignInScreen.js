@@ -124,7 +124,7 @@ const SignInScreen = () => {
         </Typography>
 
         {/* <form onSubmit={handleSubmit} method="post" action="/"> */}
-        <form method="post" action="/">
+        <form method="post" action="/signup">
         <input type="hidden" name="csrfmiddlewaretoken" value={ csrftoken } />
         <Grid container 
             spacing={5}
