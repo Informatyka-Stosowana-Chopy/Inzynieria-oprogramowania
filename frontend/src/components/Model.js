@@ -1,13 +1,21 @@
 import React, { useRef } from 'react'
 import { Canvas, extend, useFrame, useThree } from 'react-three-fiber'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { useFBX, Stars } from "@react-three/drei"
+
+
 
 extend({OrbitControls})
 const Model = () => {
 
+    // useFBX('./FBX')
+    // let fbx = useFBX(SpaceStation.fbx)
+
     const Controls = () => {
 
         const controls = useRef()
+
+        
 
         const {camera,gl} = useThree()
 
@@ -27,7 +35,12 @@ const Model = () => {
 
     return (
         <>
-            <Canvas className="model-canvas">
+            <Canvas className="model-canvas"
+                colorManagement
+                camera={{position:[0,0,6], fov: 70}}>
+                
+                <Stars />
+                <ambientLight />
                 <mesh>
 
                     <Controls />
@@ -40,7 +53,7 @@ const Model = () => {
                     <meshBasicMaterial
                         wireframe
                         attach="material" 
-                        color="white">
+                        color="lightblue">
                     </meshBasicMaterial>
 
 

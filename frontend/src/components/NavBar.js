@@ -27,7 +27,16 @@ const useStyles = makeStyles((theme) => ({
     title: {
       flexGrow: 1,
     },
-    
+    text: {
+      color: 'white',
+      textDecoration: 'none',
+      '&:visited': {
+        color: 'white',
+      },
+      '&:hover': {
+        color: '#CCCCCC',
+      },
+    },
     bar: {
       backgroundColor: grey[900], // bar color
     },
@@ -68,25 +77,25 @@ export default function NavBar() {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title}>   
-              <Link to={"./"}>HOME</Link>
+              <Link className={classes.text} to={"./"}>HOME</Link>
             </Typography>
             <Typography variant="h6" className={classes.title}>   
-              <Link to={"./planets"}>PLANETS</Link>
+              <Link className={classes.text} to={"./planets"}>PLANETS</Link>
             </Typography>
             <Typography variant="h6" className={classes.title}>
-              <Link to={"./spaceships"}>SPACESHIPS</Link>
+              <Link className={classes.text} to={"./spaceships"}>SPACESHIPS</Link>
             </Typography>
             <Typography variant="h6" className={classes.title}>
-              <Link to={"./order"}>FLIGHTS</Link>
+              <Link className={classes.text} to={"./order"}>FLIGHTS</Link>
             </Typography>
             <Typography variant="h6" className={classes.title}>
-              <Link to={"./about"}>ABOUT</Link>
+              <Link className={classes.text} to={"./about"}>ABOUT</Link>
             </Typography>
             <Typography variant="h6" className={classes.title}>
-              <Link to={"./login"}>LOG IN</Link>
+              <Link className={classes.text} to={"./login"}>LOG IN</Link>
             </Typography>
             <Typography variant="h6" className={classes.title}>
-              <Link to={"./signin"}>SIGN UP</Link>
+              <Link className={classes.text} to={"./signin"}>SIGN UP</Link>
             </Typography>
 
             {auth && (

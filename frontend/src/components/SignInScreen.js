@@ -34,6 +34,21 @@ const darkTheme = createMuiTheme({
     }
 });
 
+function getCookie(name) {
+  var cookieValue = null;
+  if (document.cookie && document.cookie !== '') {
+      var cookies = document.cookie.split(';');
+      for (var i = 0; i < cookies.length; i++) {
+          var cookie = jQuery.trim(cookies[i]);
+          if (cookie.substring(0, name.length + 1) === (name + '=')) {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+          }
+      }
+  }
+  return cookieValue;
+}
+
 const useStyles = makeStyles((theme) => ({
     signin: {
         //backgroundColor: lightBlue[900],
@@ -61,6 +76,8 @@ const defaultValues = {
 const SignInScreen = () => {
 
     const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
+
+    var csrftoken = getCookie('csrftoken')
 
     const handleDateChange = (date) => {
       setSelectedDate(date);
@@ -100,13 +117,14 @@ const SignInScreen = () => {
         <Typography
           className={ classes.text }
           align="center"
-          gutterBottom="true"
           variant="h3"
           >
           Create an account
         </Typography>
 
-        <form onSubmit={handleSubmit}>
+        {/* <form onSubmit={handleSubmit} method="post" action="/"> */}
+        <form method="post" action="/">
+        <input type="hidden" name="csrfmiddlewaretoken" value={ csrftoken } />
         <Grid container 
             spacing={5}
             alignItems="center"
@@ -262,10 +280,15 @@ const SignInScreen = () => {
                 onChange={handleInputChange}
               />
           </Grid>
+          <Button
+            name="submit-signin"
+            variant="contained"
+            color="primary"
+            type="submit"
 
-          <Button variant="contained" color="primary" type="submit">
+            >
             Submit
-          </Button>
+          </Button>s
         </Grid>
       </form>
 
