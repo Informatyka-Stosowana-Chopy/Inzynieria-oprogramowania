@@ -61,16 +61,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const defaultValues = {
-    firstname: "",
-    lastname: "",
+    first_name: "",
+    last_name: "",
     username: "",
-    password1: "",
+    password: "",
     password2: "",
     sex: "",
-    mail: "",
-    birthdate: "",
-    pesel: "",
-    homeplanet: "earth",
+    email: "",
+    birth_date: "",
+    user_pesel: "",
+    home_planet: "earth",
 };
 
 
@@ -155,23 +155,23 @@ const SignInScreen = () => {
             <TextField
               size="small"
               id="username-input"
-              name="firstname"
+              name="first_name"
               label="First name"
               variant="outlined"
               type="text"
-              value={formValues.firstname}
+              value={formValues.first_name}
               onChange={handleInputChange}
             />
           </Grid>
           <Grid item>
             <TextField
               size="small"
-              id="lastname-input"
-              name="lastname"
+              id="last_name-input"
+              name="last_name"
               label="Last name"
               variant="outlined"
               type="text"
-              value={formValues.lastname}
+              value={formValues.last_name}
               onChange={handleInputChange}
             />
           </Grid>
@@ -179,7 +179,7 @@ const SignInScreen = () => {
             <TextField
               size="small"
               id="password-input"
-              name="password1"
+              name="password"
               label="Password"
               variant="outlined"
               type="password"
@@ -204,11 +204,11 @@ const SignInScreen = () => {
               <KeyboardDatePicker
                 disableToolbar
                 variant="inline"
-                name="birthdate"
+                name="birth_date"
                 format="MM/dd/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Your birthdate"
+                label="Your birth_date"
                 value={ selectedDate }
                 onChange={ handleDateChange }
                 KeyboardButtonProps={{
@@ -251,8 +251,8 @@ const SignInScreen = () => {
           <Grid item>
             <FormControl>
               <Select
-                name="homeplanet"
-                value={formValues.homeplanet}
+                name="home_planet"
+                value={formValues.home_planet}
                 onChange={handleInputChange}
               >
                 <MenuItem key="Earth" value="earth">
@@ -273,23 +273,23 @@ const SignInScreen = () => {
           </Grid>
           <Grid item>
             <TextField
-                id="mail-input"
-                name="mail"
-                label="Mail"
+                id="email-input"
+                name="email"
+                label="email"
                 variant="outlined"
                 type="text"
-                value={formValues.mail}
+                value={formValues.email}
                 onChange={handleInputChange}
               />
           </Grid>
           <Grid item>
             <TextField
-                id="pesel-input"
-                name="pesel"
-                label="Pesel"
+                id="user_pesel-input"
+                name="user_pesel"
+                label="user_pesel"
                 variant="outlined"
                 type="number"
-                value={formValues.pesel}
+                value={formValues.user_pesel}
                 onChange={handleInputChange}
               />
           </Grid>
