@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from .forms import UserSignUpForm, ProfileSignUpForm
 from django.contrib.auth.forms import UserCreationForm, User
+from datetime import datetime
 
 # Create your views here.
 
@@ -43,17 +44,22 @@ def signUp(request, *args, **kwargs):
         password2 = request.POST.get('password2')
         email = request.POST.get('mail')
         print(username, '\n', first_name, '\n', last_name, '\n', password1, '\n', email)
-        User.objects.create_user(username=username, email=email, password=password1, first_name=first_name,
-                                 last_name=last_name)
-        if True:
+
+        if password1 == password2:
+            User.objects.create_user(username=username, email=email, password=password1, first_name=first_name,
+                                     last_name=last_name)
+
             user = User.objects.get(username=username)
             # print(user.email)
-            profile_form = ProfileSignUpForm(request.POST, instance=user)
-            if profile_form.is_valid():
-                profile_form.save()
-                return redirect('/')
-            else:
-                print('Profile form is not valid')
+            # profile_form = ProfileSignUpForm(request.POST, instance=user)
+            user.profile.birth_date = datetime.strptime(request.POST.get('birthdate'), '%m/%d/%Y')
+            user.profile.sex = request.POST.get('sex')
+            user.profile.home_planet = request.POST.get('homeplanet')
+            user.profile.user_pesel = request.POST.get('pesel')
+            print(user.profile.birth_date, '\n', user.profile.sex, '\n', user.profile.home_planet, '\n', user.profile.user_pesel)
+            print('Typ daty: ', type(user.profile.birth_date))
+            user.profile.save()
+            return redirect('/')
         else:
             print('User form is not valid')
     return redirect('/signin')
