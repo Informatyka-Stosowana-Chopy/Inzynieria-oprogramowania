@@ -21,7 +21,7 @@ def index(request, *args, **kwargs):
             return render(request, 'frontend/index.html', {'name': name, 'text': text, 'user': user, 'username_test': username_test})
     else:
         text = 'placeholder'
-        username_test = 'plejsholder'
+        username_test = 'plejsholder'  #xd
 
     if request.user.is_authenticated:
         name = 'user: ' + request.user.username
@@ -37,11 +37,11 @@ def signUp(request, *args, **kwargs):
     if request.method == 'POST':
         # user_form = UserSignUpForm(request.POST)
         username = request.POST.get('username')
-        first_name = request.POST.get('first_name')
-        last_name = request.POST.get('last_name')
-        password1 = request.POST.get('password')
+        first_name = request.POST.get('firstname')
+        last_name = request.POST.get('lastname')
+        password1 = request.POST.get('password1')
         password2 = request.POST.get('password2')
-        email = request.POST.get('email')
+        email = request.POST.get('mail')
         print(username, '\n', first_name, '\n', last_name, '\n', password1, '\n', email)
         User.objects.create_user(username=username, email=email, password=password1, first_name=first_name,
                                  last_name=last_name)

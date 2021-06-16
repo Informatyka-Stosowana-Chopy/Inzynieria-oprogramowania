@@ -25,6 +25,7 @@ import {
 import { FormHelperText, Typography } from '@material-ui/core'
 import InputAdornment from '@material-ui/core/InputAdornment';
 import { useForm } from 'react-hook-form'
+import { Card } from 'react-bootstrap'
 
 
 const darkTheme = createMuiTheme({
@@ -61,16 +62,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const defaultValues = {
-    first_name: "",
-    last_name: "",
+    firstname: "",
+    lastname: "",
     username: "",
     password: "",
     password2: "",
     sex: "",
-    email: "",
-    birth_date: "",
-    user_pesel: "",
-    home_planet: "earth",
+    mail: "",
+    birthdate: "",
+    pesel: "",
+    homeplanet: "earth",
 };
 
 
@@ -155,35 +156,35 @@ const SignInScreen = () => {
             <TextField
               size="small"
               id="username-input"
-              name="first_name"
+              name="firstname"
               label="First name"
               variant="outlined"
               type="text"
-              value={formValues.first_name}
+              value={formValues.firstname}
               onChange={handleInputChange}
             />
           </Grid>
           <Grid item>
             <TextField
               size="small"
-              id="last_name-input"
-              name="last_name"
+              id="lastname-input"
+              name="lastname"
               label="Last name"
               variant="outlined"
               type="text"
-              value={formValues.last_name}
+              value={formValues.lastname}
               onChange={handleInputChange}
             />
           </Grid>
           <Grid item>
             <TextField
               size="small"
-              id="password-input"
-              name="password"
-              label="Password"
+              id="password1-input"
+              name="password1"
+              label="Password1"
               variant="outlined"
               type="password"
-              value={formValues.password}
+              value={formValues.password1}
               onChange={handleInputChange}
             />
           </Grid>
@@ -204,11 +205,11 @@ const SignInScreen = () => {
               <KeyboardDatePicker
                 disableToolbar
                 variant="inline"
-                name="birth_date"
+                name="birthdate"
                 format="MM/dd/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Your birth_date"
+                label="Your birthdate"
                 value={ selectedDate }
                 onChange={ handleDateChange }
                 KeyboardButtonProps={{
@@ -251,8 +252,8 @@ const SignInScreen = () => {
           <Grid item>
             <FormControl>
               <Select
-                name="home_planet"
-                value={formValues.home_planet}
+                name="homeplanet"
+                value={formValues.homeplanet}
                 onChange={handleInputChange}
               >
                 <MenuItem key="Earth" value="earth">
@@ -273,23 +274,23 @@ const SignInScreen = () => {
           </Grid>
           <Grid item>
             <TextField
-                id="email-input"
-                name="email"
-                label="email"
+                id="mail-input"
+                name="mail"
+                label="mail"
                 variant="outlined"
                 type="text"
-                value={formValues.email}
+                value={formValues.mail}
                 onChange={handleInputChange}
               />
           </Grid>
           <Grid item>
             <TextField
-                id="user_pesel-input"
-                name="user_pesel"
-                label="user_pesel"
+                id="pesel-input"
+                name="pesel"
+                label="pesel"
                 variant="outlined"
                 type="number"
-                value={formValues.user_pesel}
+                value={formValues.pesel}
                 onChange={handleInputChange}
               />
           </Grid>
