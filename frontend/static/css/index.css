@@ -103,3 +103,10 @@ body {
   .planet {
     padding-top: 40px;
   }
+
+  .grid {
+    background-color: red;
+    margin: 100px;
+    padding: 100px;
+    border: 50px solid white;
+  }

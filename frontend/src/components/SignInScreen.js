@@ -229,19 +229,19 @@ const SignInScreen = () => {
               >
                 <FormControlLabel
                   key="male"
-                  value="male"
+                  value="MĘŻCZYZNA"
                   control={<Radio size="small" />}
                   label="Male"
                 />
                 <FormControlLabel
                   key="female"
-                  value="female"
+                  value="KOBIETA"
                   control={<Radio size="small" />}
                   label="Female"
                 />
                 <FormControlLabel
                   key="other"
-                  value="other"
+                  value="OTHER"
                   control={<Radio size="small" />}
                   label="Other"
                 />
