@@ -47,6 +47,7 @@ def signUp(request, *args, **kwargs):
                                  last_name=last_name)
         if True:
             user = User.objects.get(username=username)
+            # print(user.email)
             profile_form = ProfileSignUpForm(request.POST, instance=user)
             if profile_form.is_valid():
                 profile_form.save()

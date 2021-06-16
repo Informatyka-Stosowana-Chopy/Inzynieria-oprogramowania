@@ -1,0 +1,34 @@
+{
+  "planets": [
+    {
+      "name": "earth",
+      "orbitalPeriod": 120,
+      "material": "rock",
+      "density": 9000,
+      "population": 7490,
+      "radius": 6370,
+      "temperature": 23,
+      "id": 1
+    },
+    {
+      "name": "jupyter",
+      "orbitalPeriod": 1200,
+      "material": "rockAlone2k",
+      "density": 900,
+      "population": 749,
+      "radius": 637,
+      "temperature": 230,
+      "id": 2
+    },
+    {
+      "name": "as",
+      "orbitalPeriod": "5",
+      "material": "Fucking rocks",
+      "density": "9",
+      "population": "8",
+      "radius": "9",
+      "temperature": "28",
+      "id": 3
+    }
+  ]
+}

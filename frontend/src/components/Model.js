@@ -1,66 +1,18 @@
-import React, { useRef } from 'react'
+import * as THREE from "three"
+import React, { useRef, useState } from 'react'
 import { Canvas, extend, useFrame, useThree } from 'react-three-fiber'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-import { useFBX, Stars } from "@react-three/drei"
+import { Stars } from "@react-three/drei"
+import { useGLTF } from '@react-three/drei/core'
+import { GLTFLoader } from "three/examples/jsm/loaders/gltfloader"
 
 
-
-extend({OrbitControls})
-const Model = () => {
-
-    // useFBX('./FBX')
-    // let fbx = useFBX(SpaceStation.fbx)
-
-    const Controls = () => {
-
-        const controls = useRef()
-
-        
-
-        const {camera,gl} = useThree()
-
-        useFrame(() => {
-            controls.current.update()
-        })
-
-        return (
-            <orbitControls
-                ref = {controls}
-                autoRotate
-                 args={[camera, gl.domElement]}>
-
-            </orbitControls>
-        )
-    }
-
+export default function Model(props) {
+    const group = useRef()
+    const { nodes, materials } = useGLTF(GLTFLoader, 'ouxley.glb')
     return (
-        <>
-            <Canvas className="model-canvas"
-                colorManagement
-                camera={{position:[0,0,6], fov: 70}}>
-                
-                <Stars />
-                <ambientLight />
-                <mesh>
-
-                    <Controls />
-
-                    <boxBufferGeometry
-                        attach="geometry"
-                        args={[3,3,3]}>
-                    </boxBufferGeometry>
-
-                    <meshBasicMaterial
-                        wireframe
-                        attach="material" 
-                        color="lightblue">
-                    </meshBasicMaterial>
-
-
-                </mesh>
-            </Canvas>
-        </>
+      <group ref={group} {...props} dispose={null}>
+        <mesh geometry={nodes.Cylinder004.geometry} material={nodes.Cylinder004.material} />
+      </group>
     )
-}
-
-export default Model
+  }

@@ -15,6 +15,7 @@ import ScreenPlanet from './ScreenPlanets'
 import ScreenMain from './ScreenMain'
 import ScreenLogin from './ScreenLogin'
 import LoadingScreen from './LoadingScreen'
+import ScreenSpaceships from './ScreenSpaceships'
 import Api from './Api'
 import { makeStyles, withTheme } from '@material-ui/core/styles';
 
@@ -47,7 +48,10 @@ export default function App() {
                 <ScreenPlanet />
               </Route>
 
-              <Route path="/spaceships" exact>SPACESHIPS DEBUG</Route>
+              <Route path="/spaceships" exact>
+                SPACESHIPS DEBUG
+                <ScreenSpaceships />
+              </Route>
 
               <Route path="/order" exact>FLIGHTS DEBUG</Route>
 
