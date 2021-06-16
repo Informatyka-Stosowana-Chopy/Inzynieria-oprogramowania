@@ -4,15 +4,7 @@ import { Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-      margin: theme.spacing(2),
-      width: theme.spacing(24),
-      height: theme.spacing(24),
-      backgroundColor: '#101010',
-      color: 'white',
-  },
-}));
+
 
 
 const Planet = ({ planet, onDelete }) => {
