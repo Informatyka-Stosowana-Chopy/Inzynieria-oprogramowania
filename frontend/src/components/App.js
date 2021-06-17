@@ -19,6 +19,7 @@ import ScreenSpaceships from './ScreenSpaceships'
 import Api from './Api'
 import { makeStyles, withTheme } from '@material-ui/core/styles';
 
+import ScreenPlanetsNew from './ScreenPlanetsNew'
 import img from '../../public/images/img.jpg'
 import NavBar from './NavBar'
 import SignInScreen from "./SignInScreen";
@@ -27,11 +28,13 @@ import Mediator from "./Mediator";
 
 export default function App() {
 
+    const [loggedIn, setLoggedIn] = React.useState( false )
+
     return (
-      
 
         <div className='main'>
 
+          
           <Mediator />
 
           <LoadingScreen />
@@ -48,7 +51,8 @@ export default function App() {
 
               <Route path="/planets" exact>
                 PLANETS DEBUG
-                <ScreenPlanet />
+                {/* <ScreenPlanet /> */}
+                 <ScreenPlanet />  {/* Pośrednik */}
               </Route>
 
               <Route path="/spaceships" exact>
@@ -70,6 +74,16 @@ export default function App() {
               <Route path="/signin" exact>
                 <SignInScreen />
                 SIGN IN
+              </Route>
+
+              <Route path="/logout" exact>
+                <br/>
+                <Typography
+                  align={'center'}
+                  variant='h4'
+                >
+                  You have successfully logged out
+                  </Typography>
               </Route>
 
             </Switch>

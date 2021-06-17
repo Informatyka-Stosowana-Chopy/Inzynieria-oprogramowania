@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Card, CardActions, CardContent } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import TextField from '@material-ui/core/TextField'
@@ -7,6 +7,9 @@ import { makeStyles } from '@material-ui/core/styles'
 import Input from '@material-ui/core/Input'
 import Grid from '@material-ui/core/Grid'
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import InputAdornment from '@material-ui/core/InputAdornment';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import { FormHelperText, Typography } from '@material-ui/core'
 
 const darkTheme = createMuiTheme({
     palette: {
@@ -45,10 +48,20 @@ const useStyles = makeStyles({
         alignItems: "center",
         alignSelf: "center",
     },
-    submit: {
-
+    signin: {
+        paddingTop: 50,
+    },
+    text: {
+        marginBottom: 70,
+        marginTop: 70,
     },
 })
+
+const defaultValues = {
+    username: "",
+    password: ""
+};
+
 
 const ScreenLogin = () => {
 
@@ -56,41 +69,76 @@ const ScreenLogin = () => {
 
     var csrftoken = getCookie('csrftoken')
 
+    const [formValues, setFormValues] = useState(defaultValues);
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(formValues);
+    };
+
+
     return (
         <>
         <ThemeProvider theme={darkTheme}>
-        <h1>Zapraszamy do logowania</h1>
         
-        <Grid container justify="center">
-            <CardContent>
-                
-                <form method="post" action = "/">
-                    
-                <input type="hidden" name="csrfmiddlewaretoken" value={ csrftoken } />
-                    <Grid item xs={6}>
-                        <input name="input-login" placeholder="login"
-                        className={classes.input} type="text" />
-                    </Grid>
-                    <Grid item xs={6}>
-                        <input name="input-password" placeholder="password"
-                        className={classes.input} type="password" />
-                    </Grid>
-                    <Grid item xs={12}>
-                        <input name="submit-login" className={classes.input} type="submit" />
-                        <Button name="submit-login"
-                            color="default"
-                            variant="contained"
-                            type="submit">
-                                LOG ME IN
-                            </Button>
-                    </Grid>
-                </form>
-                
-            </CardContent>
-            <CardActions>
+        <Typography
+          className={ classes.text }
+          align="center"
+          variant="h3"
+          >
+          Enter the space
+        </Typography>
 
-            </CardActions>
+        <form method="post" action = "/">
+        <input type="hidden" name="csrfmiddlewaretoken" value={ csrftoken } />
+
+            <Grid container 
+                spacing={5}
+                alignItems="center"
+                justify="center"
+                direction="column">
+
+                <Grid item>
+                    <TextField
+                    size="small"
+                    name="input-login"
+                    label="Username"
+                    variant="outlined"
+                    type="text"
+                    InputProps={{
+                        startAdornment: (
+                        <InputAdornment position="start">
+                            <AccountCircle />
+                        </InputAdornment>
+                        ),
+                    }}
+                    />
+                </Grid>
+                <Grid item>
+                    <TextField
+                    size="small"
+                    name="input-password"
+                    label="Password"
+                    variant="outlined"
+                    type="text"
+                    />
+                </Grid>
+
+                <Grid item xs={12}>
+                    {/* <input name="submit-login" className={classes.input} type="submit" /> */}
+
+                    <Button
+                        name="submit-login"
+                        variant="contained"
+                        color="primary"
+                        type="submit">
+                            Submit
+                    </Button>
+                </Grid>
+           
+
         </Grid>
+        </form>
         </ThemeProvider>
         </>
     )

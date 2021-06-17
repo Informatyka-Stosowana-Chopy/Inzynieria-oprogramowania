@@ -302,7 +302,7 @@ const SignInScreen = () => {
 
             >
             Submit
-          </Button>s
+          </Button>
         </Grid>
       </form>
 

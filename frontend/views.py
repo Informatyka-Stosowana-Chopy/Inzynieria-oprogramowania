@@ -63,7 +63,7 @@ def signUp(request, *args, **kwargs):
             return redirect('/')
         else:
             print('User form is not valid')
-            messages.error(request, 'Please correct the error below.')
+            messages.error(request, 'Passwords do not match')
     return redirect('/signin')
 
 

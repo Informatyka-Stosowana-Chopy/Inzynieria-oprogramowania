@@ -1,42 +1,69 @@
 {
-  "planets": [
-    {
-      "name": "Pierwsza",
-      "orbitalPeriod": 1,
-      "material": "1",
-      "population": 1,
-      "density": 1,
-      "radius": 1,
-      "temperature": 1
-    }
-  ],
-  "spaceships": [
-    {
-      "name": "Dragon",
-      "power": 200,
-      "hyperspace": true,
-      "production_year": 2210,
-      "capacity": 10,
-      "ship_class": "V.I.P",
-      "boot_space": true
-    }
-  ],
-  "flights": [
-    {
-      "home_planet": "Pluton",
-      "destination_planet": "Pierwsza",
-      "spaceship": "Dragon",
-      "price": 2500.0,
-      "departure_date": "2021-06-17 12:56:30+00:00",
-      "date_of_arrival": "2022-04-15 12:56:34+00:00"
-    }
-  ],
-  "tickets": [
-    {
-      "user": "AndrzejDuda",
-      "flight": "Flight from Pluton to Pierwsza at 2021-06-17 12:56:30+00:00",
-      "departure_date": "2021-06-17 12:56:30+00:00",
-      "date_of_arrival": "2022-04-15 12:56:34+00:00"
-    }
-  ]
+    "planets": [
+        {
+            "name": "Pierwsza",
+            "orbitalPeriod": 1,
+            "material": "1",
+            "population": 1,
+            "density": 1,
+            "radius": 1,
+            "temperature": 1
+        },
+        {
+            "name": "PLAneda",
+            "orbitalPeriod": 450,
+            "material": "Ham",
+            "population": 7,
+            "density": 7,
+            "radius": 15,
+            "temperature": 12
+        },
+        {
+            "name": "Ziemniak",
+            "orbitalPeriod": 3,
+            "material": "Jab\u0142ko",
+            "population": 3,
+            "density": 3,
+            "radius": 4,
+            "temperature": 3
+        },
+        {
+            "name": "DodanaPlaneta",
+            "orbitalPeriod": 4,
+            "material": "a",
+            "population": 3,
+            "density": 4,
+            "radius": 2,
+            "temperature": 14
+        }
+    ],
+    "spaceships": [
+        {
+            "name": "Dragon",
+            "power": 200,
+            "hyperspace": true,
+            "production_year": 2210,
+            "capacity": 10,
+            "ship_class": "V.I.P",
+            "boot_space": true
+        }
+    ],
+    "flights": [
+        {
+            "home_planet": "Pluton",
+            "destination_planet": "Pierwsza",
+            "spaceship": "Dragon",
+            "price": 2500.0,
+            "departure_date": "2021-06-17 12:56:30+00:00",
+            "date_of_arrival": "2022-04-15 12:56:34+00:00"
+        }
+    ],
+    "tickets": [
+        {
+            "user": "AndrzejDuda",
+            "flight": "Flight from Pluton to Pierwsza at 2021-06-17 12:56:30+00:00",
+            "departure_date": "2021-06-17 12:56:30+00:00",
+            "date_of_arrival": "2022-04-15 12:56:34+00:00"
+        }
+    ]
 }

@@ -15,6 +15,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 import logo from '../../public/images/logo.png'
 import { grey } from '@material-ui/core/colors';
+import { Redirect } from 'react-router-dom';
 
 // styling
 const useStyles = makeStyles((theme) => ({
@@ -40,6 +41,10 @@ const useStyles = makeStyles((theme) => ({
     bar: {
       backgroundColor: grey[900], // bar color
     },
+    link: {
+      textDecoration: 'none',
+      color: 'black',
+    }
   }));
 
 // function
@@ -62,6 +67,11 @@ export default function NavBar() {
     const handleClose = () => {
       setAnchorEl(null);
     };
+
+    const func = ( () => {
+      window.location.reload(true);
+    })
+
 
     return (
       <div className={classes.root}>
@@ -99,12 +109,14 @@ export default function NavBar() {
             </Typography>
 
             {auth && (
+              
               <div>
+                
                 <IconButton
                   aria-label="account of current user"
                   aria-controls="menu-appbar"
                   aria-haspopup="true"
-                  onClick={handleMenu}
+                  onClick={ handleMenu }
                   color="inherit"
                 >
                   <AccountCircle />
@@ -126,7 +138,9 @@ export default function NavBar() {
                 >
                   <MenuItem onClick={handleClose}>Profile</MenuItem>
                   <MenuItem onClick={handleClose}>My account</MenuItem>
-                  <MenuItem onClick={handleClose}>Log out</MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    <Link onClick={ func } className={classes.link} to={"./logout"} exact> Log out </Link>
+                  </MenuItem>
                 </Menu>
               </div>
             )}

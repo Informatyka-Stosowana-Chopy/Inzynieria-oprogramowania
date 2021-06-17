@@ -19,16 +19,6 @@
       "radius": 637,
       "temperature": 230,
       "id": 2
-    },
-    {
-      "name": "as",
-      "orbitalPeriod": "5",
-      "material": "Fucking rocks",
-      "density": "9",
-      "population": "8",
-      "radius": "9",
-      "temperature": "28",
-      "id": 3
     }
   ],
   "spaceships": [
