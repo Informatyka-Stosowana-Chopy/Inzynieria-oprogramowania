@@ -1,5 +1,6 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from .forms import UserSignUpForm, ProfileSignUpForm
 from django.contrib.auth.forms import UserCreationForm, User
 from datetime import datetime
@@ -38,11 +39,11 @@ def signUp(request, *args, **kwargs):
     if request.method == 'POST':
         # user_form = UserSignUpForm(request.POST)
         username = request.POST.get('username')
-        first_name = request.POST.get('firstname')
-        last_name = request.POST.get('lastname')
-        password1 = request.POST.get('password1')
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        password1 = request.POST.get('password')
         password2 = request.POST.get('password2')
-        email = request.POST.get('mail')
+        email = request.POST.get('email')
         print(username, '\n', first_name, '\n', last_name, '\n', password1, '\n', email)
 
         if password1 == password2:
@@ -52,14 +53,21 @@ def signUp(request, *args, **kwargs):
             user = User.objects.get(username=username)
             # print(user.email)
             # profile_form = ProfileSignUpForm(request.POST, instance=user)
-            user.profile.birth_date = datetime.strptime(request.POST.get('birthdate'), '%m/%d/%Y')
+            user.profile.birth_date = datetime.strptime(request.POST.get('birth_date'), '%m/%d/%Y')
             user.profile.sex = request.POST.get('sex')
-            user.profile.home_planet = request.POST.get('homeplanet')
-            user.profile.user_pesel = request.POST.get('pesel')
+            user.profile.home_planet = request.POST.get('home_planet')
+            user.profile.user_pesel = request.POST.get('user_pesel')
             print(user.profile.birth_date, '\n', user.profile.sex, '\n', user.profile.home_planet, '\n', user.profile.user_pesel)
             print('Typ daty: ', type(user.profile.birth_date))
             user.profile.save()
             return redirect('/')
         else:
             print('User form is not valid')
+            messages.error(request, 'Please correct the error below.')
     return redirect('/signin')
+
+
+def userLogout(request, *args, **kwargs):
+    logout(request)
+    messages.error(request, 'You logged out successfully')
+    return redirect('/')

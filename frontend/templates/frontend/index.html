@@ -18,10 +18,20 @@
     
   </head>
   <body>
-    <div id="main">
+  <div id="main">
         <div>{{ name }} == {{ text }} == {{ user.first_name }} == {{ user.last_name }} == BD: {{ user.profile.birth_date | date:"d M Y"}} == Origin Panet: {{ user.profile.home_planet }}</div>
         <br>
         <div>test = {{ username_test }}</div>
+        <br>
+        <a href="/logout">Log me out<a>
+        <br>
+        {% if messages %}
+            <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
         <form method="post" action="/">
             {% csrf_token %}
             <input type="text" name="input" value="input" />
