@@ -22,6 +22,7 @@ import { makeStyles, withTheme } from '@material-ui/core/styles';
 import img from '../../public/images/img.jpg'
 import NavBar from './NavBar'
 import SignInScreen from "./SignInScreen";
+import Mediator from "./Mediator";
 
 
 export default function App() {
@@ -30,6 +31,8 @@ export default function App() {
       
 
         <div className='main'>
+
+          <Mediator />
 
           <LoadingScreen />
           <Api />

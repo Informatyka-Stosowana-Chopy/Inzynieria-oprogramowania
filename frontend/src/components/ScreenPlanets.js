@@ -36,13 +36,6 @@ const defaultInfo = {
   temperature: -4,
 };
 
-function ShowHtml(props) {
-  let body = '<model-viewer src="../../src/ouxley.gltf" camera-controls auto-rotate></model-viewer>'
-  return (
-   <div  dangerouslySetInnerHTML={{__html: body}} />
-  )
-}
-
 const ScreenPlanets = () => {
 
     // JSON
@@ -106,7 +99,7 @@ const ScreenPlanets = () => {
 
     const classes = useStyles()
 
-    const [planetInfo, setPlanetInfo] = useState(defaultInfo)
+    const [planetInfo, setPlanetInfo] = useState( defaultInfo )
 
     return (
         <>
@@ -139,7 +132,7 @@ const ScreenPlanets = () => {
 
 
 
-          <Grid container justify="center" className={ classes.root }>
+          {/* <Grid container justify="center" className={ classes.root }>
               <Grid item xs={3} className={classes.panel} align="right">  
 
 
@@ -151,7 +144,7 @@ const ScreenPlanets = () => {
                   <ambientLight intensity={0.6} />
                   <directionalLight intensity={0.6} />
                   <Suspense fallback={null}>
-                    {/* <Model /> */}
+                    <Model/>
                     
                   </Suspense>
                 </Canvas>
@@ -161,7 +154,7 @@ const ScreenPlanets = () => {
 
 
               </Grid>
-          </Grid>
+            </Grid> */}
 
           
         </>

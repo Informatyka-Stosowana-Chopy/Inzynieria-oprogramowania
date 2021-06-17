@@ -3,7 +3,7 @@ import Planet from './Planet'
 
 const Planets = ({ planets, onDelete }) => {
     return (
-        <>
+        <div className="grid">
             { planets.map((planet, index) => (
                 <Planet
                     key={ index }
@@ -11,7 +11,7 @@ const Planets = ({ planets, onDelete }) => {
                     onDelete={ onDelete }
                 />
             ))}
-        </>
+        </div>
     )
 }
 

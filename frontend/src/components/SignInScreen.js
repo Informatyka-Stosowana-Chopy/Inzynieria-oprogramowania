@@ -256,16 +256,16 @@ const SignInScreen = () => {
                 value={formValues.homeplanet}
                 onChange={handleInputChange}
               >
-                <MenuItem key="Earth" value="earth">
+                <MenuItem key="Earth" value="Earth">
                   Earth
                 </MenuItem>
-                <MenuItem key="Mars" value="mars">
+                <MenuItem key="Mars" value="Mars">
                   Mars
                 </MenuItem>
-                <MenuItem key="Jupiter" value="jupiter">
+                <MenuItem key="Jupiter" value="Jupiter">
                   Jupiter
                 </MenuItem>
-                <MenuItem key="Other" value="other">
+                <MenuItem key="Other" value="Other">
                   Other
                 </MenuItem>
               </Select>
